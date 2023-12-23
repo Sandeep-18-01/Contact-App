@@ -1,0 +1,19 @@
+/* Change styles for body */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Change font family */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8; /* Change to your preferred background color */
+  color: #333; /* Change to your preferred text color */
+}
+
+/* Change styles for code */
+code {
+  font-family: "Courier New", Courier, monospace; /* Change font family */
+  font-size: 14px; /* Change font size */
+  background-color: #f0f0f0; /* Change to your preferred background color */
+  padding: 3px 5px; /* Add padding for better spacing */
+  border-radius: 3px; /* Add border-radius for rounded corners */
+  color: #333; /* Change to your preferred text color */
+}

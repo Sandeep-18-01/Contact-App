@@ -1,16 +1,39 @@
-import React from 'react';
-import { Router } from 'react-router-dom';
+import "./App.css";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
-import GlobalStyles from './assets/styles/global';
-import Routes from './routes';
-import history from './routes/history';
+import Navbar from "./Components/Contacts/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Contacts/Home";
+import EditContact from "./Components/Contacts/EditContact";
+import AddContacts from "./Components/Contacts/AddContact";
+import {useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchUsers } from "./Components/Redux/ContactActions";
 
-export default function App() {
+
+function App() {
+  const dispatch = useDispatch()
+
+  // dispatch fetchUsers 
+  useEffect(() => {
+      dispatch(fetchUsers())
+  },[])
+
   return (
-    <Router history={history}>
-      <GlobalStyles />
-
-      <Routes />
-    </Router>
+      <div className="App">
+        {/* for notification from react-toastify */}
+      <ToastContainer />
+      {/* navbar component */}
+      <Navbar />
+      {/* adding routes */}
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/edit/:id" element={<EditContact/>} />
+        <Route path="/add" element={<AddContacts/>} />
+      </Routes>
+    </div>
   );
 }
+
+export default App;

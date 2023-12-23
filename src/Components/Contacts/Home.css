@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  font-size: 16px;
+  text-align: left;
+}
+
+table tr {
+  border-bottom: 2px solid #3498db;
+}
+
+.table-heading th,
+.table-heading tr {
+  padding: 10px 30px;
+  background-color: #3498db;
+  color: #fff;
+}
